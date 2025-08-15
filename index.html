@@ -29,14 +29,14 @@
 
     function createPassword(){
         let password = ""
-        password += upperCase[Math.round(Math.random() * upperCase.length)]
-        password += lowerCase[Math.round(Math.random() * lowerCase.length)]
-        password += numbers[Math.round(Math.random() * numbers.length)]
-        password += symbols[Math.round(Math.random() * symbols.length)]  
+        //first four digits to be different and consist all the types
+        password += upperCase[Math.floor(Math.random() * upperCase.length)]
+        password += lowerCase[Math.floor(Math.random() * lowerCase.length)]
+        password += numbers[Math.floor(Math.random() * numbers.length)]
+        password += symbols[Math.floor(Math.random() * symbols.length)]  
         
         while(password.length < length  ){
-            password += allChars[Math.round(Math.random() * allChars.length)]
-            console.log(password)
+            password += allChars[Math.floor(Math.random() * allChars.length)]
         }
         passwordBox.value = password
     }
